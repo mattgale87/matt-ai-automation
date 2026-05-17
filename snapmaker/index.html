@@ -21,7 +21,9 @@
             --radius: 16px;
             --radius-sm: 10px;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: #fff;
@@ -29,6 +31,8 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+
+        /* ── Hero ── */
         .hero {
             background: var(--gradient-2);
             color: #fff;
@@ -97,86 +101,422 @@
         }
         .hero-cta .arrow { transition: transform 0.3s; }
         .hero-cta:hover .arrow { transform: translateX(4px); }
-        .hero-image { display: flex; justify-content: center; align-items: center; }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-product-img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .hero-product-img:hover {
+            transform: scale(1.02);
+        }
         .hero-card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: var(--radius);
-            padding: 32px;
+            padding: 24px;
             backdrop-filter: blur(10px);
             text-align: center;
             max-width: 440px;
         }
-        .hero-card .printer-icon { font-size: 5rem; margin-bottom: 16px; display: block; }
-        .hero-card h3 { font-size: 1.6rem; margin-bottom: 8px; }
-        .hero-card .price { font-size: 2rem; font-weight: 800; color: var(--snap-green); }
-        .hero-card .price span { font-size: 1rem; color: var(--snap-gray); font-weight: 400; text-decoration: line-through; margin-right: 8px; }
-        .hero-card .badge { display: inline-block; background: var(--snap-accent); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-top: 12px; }
-        .trust-bar { background: #fff; border-bottom: 1px solid var(--snap-gray-light); padding: 20px 24px; }
-        .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
-        .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--snap-gray); }
+        .hero-card .printer-icon {
+            font-size: 5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .hero-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+        .hero-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--snap-green);
+        }
+        .hero-card .price span {
+            font-size: 1rem;
+            color: var(--snap-gray);
+            font-weight: 400;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+        .hero-card .badge {
+            display: inline-block;
+            background: var(--snap-accent);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        /* ── Trust Bar ── */
+        .trust-bar {
+            background: #fff;
+            border-bottom: 1px solid var(--snap-gray-light);
+            padding: 20px 24px;
+        }
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--snap-gray);
+        }
         .trust-item .icon { font-size: 1.4rem; }
         .trust-item strong { color: #1a1a2e; }
-        .section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
-        .section-title { text-align: center; margin-bottom: 12px; font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; }
-        .section-subtitle { text-align: center; color: var(--snap-gray); font-size: 1.1rem; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
-        .product-card { background: #fff; border: 1px solid var(--snap-gray-light); border-radius: var(--radius); overflow: hidden; transition: all 0.3s ease; position: relative; }
-        .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--snap-blue); }
-        .product-card .card-header { background: var(--gradient-2); padding: 32px; text-align: center; color: #fff; position: relative; }
-        .product-card .card-header .emoji { font-size: 4rem; display: block; margin-bottom: 12px; }
-        .product-card .card-header h3 { font-size: 1.5rem; font-weight: 700; }
-        .product-card .card-header .tag { position: absolute; top: 16px; right: 16px; background: var(--snap-accent); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-        .product-card .card-body { padding: 28px; }
-        .product-card .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
-        .product-card .price-now { font-size: 2rem; font-weight: 800; color: var(--snap-dark); }
-        .product-card .price-was { font-size: 1rem; color: var(--snap-gray); text-decoration: line-through; }
-        .product-card .price-save { font-size: 0.85rem; color: var(--snap-green); font-weight: 600; }
-        .product-card .features { list-style: none; margin-bottom: 24px; }
-        .product-card .features li { padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; }
+
+        /* ── Section Shared ── */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 12px;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--snap-gray);
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Product Cards ── */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid var(--snap-gray-light);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--snap-blue);
+        }
+        .product-card .card-header {
+            background: var(--gradient-2);
+            padding: 32px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .product-card .card-header {
+            background: var(--gradient-2);
+            padding: 24px 32px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .product-card .card-header .product-img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .product-card .card-header .emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .product-card .card-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .product-card .card-header .tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--snap-accent);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .product-card .card-body {
+            padding: 28px;
+        }
+        .product-card .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .product-card .price-now {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--snap-dark);
+        }
+        .product-card .price-was {
+            font-size: 1rem;
+            color: var(--snap-gray);
+            text-decoration: line-through;
+        }
+        .product-card .price-save {
+            font-size: 0.85rem;
+            color: var(--snap-green);
+            font-weight: 600;
+        }
+        .product-card .features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        .product-card .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
         .product-card .features li:last-child { border-bottom: none; }
-        .product-card .features .check { color: var(--snap-green); font-weight: 700; flex-shrink: 0; }
-        .product-card .best-for { background: var(--snap-light); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 24px; font-size: 0.9rem; }
-        .product-card .best-for strong { color: var(--snap-blue); }
-        .product-card .cta-btn { display: block; width: 100%; text-align: center; background: var(--snap-blue); color: #fff; padding: 14px; border-radius: 50px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
-        .product-card .cta-btn:hover { background: #0044DD; transform: scale(1.02); }
-        .comparison-section { background: var(--snap-light); padding: 80px 0; }
-        .comparison-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .comparison-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
-        .comparison-table th { background: var(--snap-dark); color: #fff; padding: 16px 20px; text-align: left; font-size: 0.9rem; font-weight: 600; }
-        .comparison-table th:first-child { width: 200px; }
-        .comparison-table td { padding: 14px 20px; border-bottom: 1px solid var(--snap-gray-light); font-size: 0.9rem; }
-        .comparison-table tr:hover td { background: #f8f9ff; }
-        .comparison-table .highlight { color: var(--snap-blue); font-weight: 700; }
-        .comparison-table .winner { background: rgba(0,200,83,0.08); }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
-        .why-card { background: #fff; border: 1px solid var(--snap-gray-light); border-radius: var(--radius); padding: 28px; transition: all 0.3s ease; }
-        .why-card:hover { border-color: var(--snap-blue); box-shadow: var(--shadow-hover); }
-        .why-card .icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
-        .why-card h4 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
-        .why-card p { font-size: 0.9rem; color: var(--snap-gray); line-height: 1.5; }
-        .disclosure { background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 20px 24px; max-width: 1200px; margin: 0 auto 40px; font-size: 0.85rem; color: #92400e; line-height: 1.6; }
+        .product-card .features .check {
+            color: var(--snap-green);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .product-card .best-for {
+            background: var(--snap-light);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .product-card .best-for strong {
+            color: var(--snap-blue);
+        }
+        .product-card .cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--snap-blue);
+            color: #fff;
+            padding: 14px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .product-card .cta-btn:hover {
+            background: #0044DD;
+            transform: scale(1.02);
+        }
+
+        /* ── Comparison Table ── */
+        .comparison-section {
+            background: var(--snap-light);
+            padding: 80px 0;
+        }
+        .comparison-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .comparison-table th {
+            background: var(--snap-dark);
+            color: #fff;
+            padding: 16px 20px;
+            text-align: left;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child {
+            width: 200px;
+        }
+        .comparison-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--snap-gray-light);
+            font-size: 0.9rem;
+        }
+        .comparison-table tr:hover td {
+            background: #f8f9ff;
+        }
+        .comparison-table .highlight {
+            color: var(--snap-blue);
+            font-weight: 700;
+        }
+        .comparison-table .winner {
+            background: rgba(0,200,83,0.08);
+        }
+
+        /* ── Why Section ── */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .why-card {
+            background: #fff;
+            border: 1px solid var(--snap-gray-light);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        .why-card:hover {
+            border-color: var(--snap-blue);
+            box-shadow: var(--shadow-hover);
+        }
+        .why-card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .why-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .why-card p {
+            font-size: 0.9rem;
+            color: var(--snap-gray);
+            line-height: 1.5;
+        }
+
+        /* ── Affiliate Disclosure ── */
+        .disclosure {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: var(--radius-sm);
+            padding: 20px 24px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            font-size: 0.85rem;
+            color: #92400e;
+            line-height: 1.6;
+        }
         .disclosure strong { color: #78350f; }
-        .faq-grid { max-width: 800px; margin: 0 auto; }
-        .faq-item { border: 1px solid var(--snap-gray-light); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; transition: all 0.2s; }
+
+        /* ── FAQ ── */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid var(--snap-gray-light);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
         .faq-item:hover { border-color: var(--snap-blue); }
-        .faq-q { padding: 18px 20px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff; }
-        .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--snap-blue); font-weight: 700; transition: transform 0.2s; }
-        .faq-item.open .faq-q::after { transform: rotate(45deg); }
-        .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--snap-gray); font-size: 0.95rem; line-height: 1.7; }
-        .faq-item.open .faq-a { padding: 0 20px 18px; max-height: 300px; }
-        .footer { background: var(--snap-dark); color: rgba(255,255,255,0.6); padding: 48px 24px 32px; text-align: center; }
-        .footer-inner { max-width: 1200px; margin: 0 auto; }
-        .footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .faq-q {
+            padding: 18px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--snap-blue);
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-q::after {
+            transform: rotate(45deg);
+        }
+        .faq-a {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--snap-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-a {
+            padding: 0 20px 18px;
+            max-height: 300px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: var(--snap-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 48px 24px 32px;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
         .footer a:hover { color: #fff; }
-        .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 20px; flex-wrap: wrap; }
-        .footer .brand { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
-        .footer .copyright { font-size: 0.8rem; margin-top: 12px; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .footer .brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .footer .copyright {
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 768px) {
-            .hero-inner { grid-template-columns: 1fr; padding: 60px 20px 40px; text-align: center; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                padding: 60px 20px 40px;
+                text-align: center;
+            }
             .hero-text h1 { font-size: 2.2rem; }
             .hero-text p { margin-left: auto; margin-right: auto; }
             .hero-image { order: -1; }
+            .hero-product-img { max-width: 300px; }
             .section { padding: 48px 20px; }
             .section-title { font-size: 1.8rem; }
             .products-grid { grid-template-columns: 1fr; }
@@ -188,30 +528,23 @@
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ═══════ HERO ═══════ -->
 <section class="hero">
     <div class="hero-inner">
         <div class="hero-text">
             <h1>Stop Wasting Filament.<br><span>Start Printing Smarter.</span></h1>
             <p>I've tested every major Snapmaker printer. Here's what actually delivers — and where to get the best deal.</p>
             <a href="https://snapmaker.sjv.io/KBz5Je" class="hero-cta" rel="nofollow noopener" target="_blank">
-                Shop Snapmaker Deals <span class="arrow">&rarr;</span>
+                Shop Snapmaker Deals <span class="arrow">→</span>
             </a>
         </div>
         <div class="hero-image">
-            <div class="hero-card">
-                <span class="printer-icon">🖨️</span>
-                <h3>Snapmaker U1</h3>
-                <div class="price">
-                    <span>$999</span> $849
-                </div>
-                <div class="badge">🔥 BEST MULTI-COLOR VALUE</div>
-            </div>
+            <img src="https://us.snapmaker.com/cdn/shop/files/U1_c9534a17-eea4-4937-b1d6-13b45ccc7ca0.webp?v=1763646848" alt="Snapmaker U1 3D Printer — multi-color tool-changing printer" class="hero-product-img" loading="eager">
         </div>
     </div>
 </section>
 
-<!-- TRUST BAR -->
+<!-- ═══════ TRUST BAR ═══════ -->
 <div class="trust-bar">
     <div class="trust-inner">
         <div class="trust-item">
@@ -220,7 +553,7 @@
         </div>
         <div class="trust-item">
             <span class="icon">✅</span>
-            <strong>Real reviews</strong> &mdash; no paid placements
+            <strong>Real reviews</strong> — no paid placements
         </div>
         <div class="trust-item">
             <span class="icon">💰</span>
@@ -228,15 +561,15 @@
         </div>
         <div class="trust-item">
             <span class="icon">🇺🇸</span>
-            <strong>Ships from US</strong> &mdash; fast delivery
+            <strong>Ships from US</strong> — fast delivery
         </div>
     </div>
 </div>
 
-<!-- PRODUCT CARDS -->
+<!-- ═══════ PRODUCT CARDS ═══════ -->
 <section class="section">
     <h2 class="section-title">Which Snapmaker Is Right For You?</h2>
-    <p class="section-subtitle">I break down each model honestly &mdash; strengths, weaknesses, and who it's actually built for.</p>
+    <p class="section-subtitle">I break down each model honestly — strengths, weaknesses, and who it's actually built for.</p>
 
     <div class="products-grid">
 
@@ -244,7 +577,7 @@
         <div class="product-card">
             <div class="card-header">
                 <span class="tag">TOP PICK</span>
-                <span class="emoji">🖨️</span>
+                <img src="https://us.snapmaker.com/cdn/shop/files/U1_c9534a17-eea4-4937-b1d6-13b45ccc7ca0.webp?v=1763646848" alt="Snapmaker U1" class="product-img" loading="lazy">
                 <h3>Snapmaker U1</h3>
             </div>
             <div class="card-body">
@@ -254,7 +587,7 @@
                     <span class="price-save">Save $150</span>
                 </div>
                 <ul class="features">
-                    <li><span class="check">✓</span> 4 automatic toolheads &mdash; true multi-color, zero purge towers</li>
+                    <li><span class="check">✓</span> 4 automatic toolheads — true multi-color, zero purge towers</li>
                     <li><span class="check">✓</span> 500 mm/s print speed, 20,000 mm/s² acceleration</li>
                     <li><span class="check">✓</span> 270 × 270 × 270 mm build volume</li>
                     <li><span class="check">✓</span> 300°C nozzle, 100°C heated bed</li>
@@ -262,10 +595,10 @@
                     <li><span class="check">✓</span> Guided touchscreen calibration, mostly pre-assembled</li>
                 </ul>
                 <div class="best-for">
-                    <strong>Best for:</strong> Multi-color printing without the waste. The tool-changer is the real deal &mdash; no purge towers means 5× less filament waste vs. AMS systems.
+                    <strong>Best for:</strong> Multi-color printing without the waste. The tool-changer is the real deal — no purge towers means 5× less filament waste vs. AMS systems.
                 </div>
                 <a href="https://snapmaker.sjv.io/KBz5Je" class="cta-btn" rel="nofollow noopener" target="_blank">
-                    Get U1 Deal &rarr;
+                    Get U1 Deal →
                 </a>
             </div>
         </div>
@@ -274,7 +607,7 @@
         <div class="product-card">
             <div class="card-header">
                 <span class="tag">3-IN-1</span>
-                <span class="emoji">🔧</span>
+                <img src="https://us.snapmaker.com/cdn/shop/files/Artisan-Premium-3-in-1-3D-Printer_8db9f8ed-de98-4a1e-b89b-3e4f5c1ce03b.jpg?v=1775138101" alt="Snapmaker Artisan" class="product-img" loading="lazy">
                 <h3>Snapmaker Artisan</h3>
             </div>
             <div class="card-body">
@@ -285,7 +618,7 @@
                 </div>
                 <ul class="features">
                     <li><span class="check">✓</span> 3-in-1: 3D print, laser, CNC in one machine</li>
-                    <li><span class="check">✓</span> Quick-swap modules &mdash; switch in under 60 seconds</li>
+                    <li><span class="check">✓</span> Quick-swap modules — switch in under 60 seconds</li>
                     <li><span class="check">✓</span> 400 × 400 × 400 mm build volume</li>
                     <li><span class="check">✓</span> 200W CNC module for real machining</li>
                     <li><span class="check">✓</span> 10W / 20W / 40W laser options</li>
@@ -295,7 +628,7 @@
                     <strong>Best for:</strong> Makers who want ONE machine to 3D print, laser engrave, AND CNC carve. No compromises on build quality.
                 </div>
                 <a href="https://snapmaker.sjv.io/KBz5Je" class="cta-btn" rel="nofollow noopener" target="_blank">
-                    Get Artisan Deal &rarr;
+                    Get Artisan Deal →
                 </a>
             </div>
         </div>
@@ -304,7 +637,7 @@
         <div class="product-card">
             <div class="card-header">
                 <span class="tag">IDEX</span>
-                <span class="emoji">⚡</span>
+                <img src="https://us.snapmaker.com/cdn/shop/files/0714-US_2_d38d6cf7-3459-42c5-be2f-a8f0e7b4f95b.png?v=1627988393" alt="Snapmaker J1s" class="product-img" loading="lazy">
                 <h3>Snapmaker J1s</h3>
             </div>
             <div class="card-body">
@@ -314,7 +647,7 @@
                     <span class="price-save">Save $200</span>
                 </div>
                 <ul class="features">
-                    <li><span class="check">✓</span> Independent dual extruder (IDEX) &mdash; mirror or duplicate</li>
+                    <li><span class="check">✓</span> Independent dual extruder (IDEX) — mirror or duplicate</li>
                     <li><span class="check">✓</span> 350 mm/s print speed with 10,000 mm/s² acceleration</li>
                     <li><span class="check">✓</span> 300 × 200 × 200 mm build volume</li>
                     <li><span class="check">✓</span> Full metal frame, direct drive extruders</li>
@@ -325,7 +658,7 @@
                     <strong>Best for:</strong> Speed demons who want two printers in one. IDEX mirror mode is perfect for batch-producing parts fast.
                 </div>
                 <a href="https://snapmaker.sjv.io/KBz5Je" class="cta-btn" rel="nofollow noopener" target="_blank">
-                    Get J1s Deal &rarr;
+                    Get J1s Deal →
                 </a>
             </div>
         </div>
@@ -333,7 +666,7 @@
     </div>
 </section>
 
-<!-- COMPARISON TABLE -->
+<!-- ═══════ COMPARISON TABLE ═══════ -->
 <section class="comparison-section">
     <div class="comparison-inner">
         <h2 class="section-title">Quick Specs Comparison</h2>
@@ -364,7 +697,7 @@
                 <tr>
                     <td><strong>Max Speed</strong></td>
                     <td class="highlight">500 mm/s</td>
-                    <td>&mdash;</td>
+                    <td>—</td>
                     <td>350 mm/s</td>
                 </tr>
                 <tr>
@@ -387,9 +720,9 @@
                 </tr>
                 <tr>
                     <td><strong>3-in-1 (Laser/CNC)</strong></td>
-                    <td>&mdash;</td>
+                    <td>—</td>
                     <td class="highlight">✓ Full suite</td>
-                    <td>&mdash;</td>
+                    <td>—</td>
                 </tr>
                 <tr>
                     <td><strong>Nozzle Temp</strong></td>
@@ -408,21 +741,21 @@
     </div>
 </section>
 
-<!-- WHY SNAPMAKER -->
+<!-- ═══════ WHY SNAPMAKER ═══════ -->
 <section class="section">
     <h2 class="section-title">Why I Recommend Snapmaker</h2>
-    <p class="section-subtitle">I've put these machines through real prints &mdash; not just unboxing videos.</p>
+    <p class="section-subtitle">I've put these machines through real prints — not just unboxing videos.</p>
 
     <div class="why-grid">
         <div class="why-card">
             <span class="icon">🔄</span>
             <h4>Tool-Changing Changes Everything</h4>
-            <p>The U1's 4-head system means zero purge towers. You actually save money on filament over time &mdash; the printer pays for itself.</p>
+            <p>The U1's 4-head system means zero purge towers. You actually save money on filament over time — the printer pays for itself.</p>
         </div>
         <div class="why-card">
             <span class="icon">🏗️</span>
             <h4>Built Like a Tank</h4>
-            <p>All-metal frames, linear rails, genuine CoreXY kinematics. These aren't toys &mdash; they're workshop-grade machines that last.</p>
+            <p>All-metal frames, linear rails, genuine CoreXY kinematics. These aren't toys — they're workshop-grade machines that last.</p>
         </div>
         <div class="why-card">
             <span class="icon">🎯</span>
@@ -432,7 +765,7 @@
         <div class="why-card">
             <span class="icon">📐</span>
             <h4>3-in-1 Versatility (Artisan)</h4>
-            <p>3D print, laser engrave, CNC carve &mdash; one machine, three capabilities. Swap modules in under a minute. No other brand does this.</p>
+            <p>3D print, laser engrave, CNC carve — one machine, three capabilities. Swap modules in under a minute. No other brand does this.</p>
         </div>
         <div class="why-card">
             <span class="icon">⚡</span>
@@ -442,12 +775,12 @@
         <div class="why-card">
             <span class="icon">🌍</span>
             <h4>Active Community & Support</h4>
-            <p>Reddit, Discord, forums &mdash; Snapmaker's community is huge. Plus real warranty support and 30-day price guarantee.</p>
+            <p>Reddit, Discord, forums — Snapmaker's community is huge. Plus real warranty support and 30-day price guarantee.</p>
         </div>
     </div>
 </section>
 
-<!-- HONEST TAKE -->
+<!-- ═══════ HONEST TAKE ═══════ -->
 <section class="section" style="padding-top: 0;">
     <div style="background: var(--snap-light); border-radius: var(--radius); padding: 40px; max-width: 800px; margin: 0 auto;">
         <h3 style="font-size: 1.5rem; margin-bottom: 16px; text-align: center;">🤔 My Honest Take</h3>
@@ -455,7 +788,7 @@
             I'm not going to hype these printers as perfect. Here's what's real:
         </p>
         <ul style="color: var(--snap-gray); font-size: 0.95rem; line-height: 2; padding-left: 20px;">
-            <li><strong style="color: #1a1a2e;">U1:</strong> The best multi-color printer under $1,000. Period. But it's new &mdash; long-term reliability data is still building. Snapmaker's track record is solid though.</li>
+            <li><strong style="color: #1a1a2e;">U1:</strong> The best multi-color printer under $1,000. Period. But it's new — long-term reliability data is still building. Snapmaker's track record is solid though.</li>
             <li><strong style="color: #1a1a2e;">Artisan:</strong> Incredible 3-in-1 value, but you're paying for versatility over specialization. A dedicated CNC or laser will outperform it in those modes.</li>
             <li><strong style="color: #1a1a2e;">J1s:</strong> Best dual-extruder for the price. IDEX is genuinely useful. But if you need multi-color (3+), the U1 is worth the extra $250.</li>
         </ul>
@@ -465,7 +798,7 @@
     </div>
 </section>
 
-<!-- FAQ -->
+<!-- ═══════ FAQ ═══════ -->
 <section class="section">
     <h2 class="section-title">Frequently Asked Questions</h2>
     <p class="section-subtitle">The questions I get most about Snapmaker printers.</p>
@@ -473,7 +806,7 @@
     <div class="faq-grid">
         <div class="faq-item">
             <div class="faq-q">Is the U1 better than Bambu Lab for multi-color?</div>
-            <div class="faq-a">If you care about filament waste, yes. The U1's tool-changer means zero purge towers &mdash; the AMS system on Bambu wastes 30-50% of filament on multi-color prints. Over time, that waste adds up to more than the printer's cost difference.</div>
+            <div class="faq-a">If you care about filament waste, yes. The U1's tool-changer means zero purge towers — the AMS system on Bambu wastes 30-50% of filament on multi-color prints. Over time, that waste adds up to more than the printer's cost difference.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">How hard is the U1 to set up?</div>
@@ -485,11 +818,11 @@
         </div>
         <div class="faq-item">
             <div class="faq-q">Does Snapmaker have a warranty?</div>
-            <div class="faq-a">Yes &mdash; standard warranty covers manufacturing defects. They also offer a 30-day price guarantee and Snapmaker Care extended plans. Check their site for current terms.</div>
+            <div class="faq-a">Yes — standard warranty covers manufacturing defects. They also offer a 30-day price guarantee and Snapmaker Care extended plans. Check their site for current terms.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">What filament does Snapmaker recommend?</div>
-            <div class="faq-a">They sell their own line (PLA, PETG, TPU, Silk PLA, PETG HF, TPU 95A HF). But any standard 1.75mm filament works great &mdash; Polymaker, Overture, Hatchbox all tested and confirmed.</div>
+            <div class="faq-a">They sell their own line (PLA, PETG, TPU, Silk PLA, PETG HF, TPU 95A HF). But any standard 1.75mm filament works great — Polymaker, Overture, Hatchbox all tested and confirmed.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">Do affiliate links cost me more?</div>
@@ -498,23 +831,23 @@
     </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- ═══════ CTA BANNER ═══════ -->
 <section style="background: var(--gradient-1); padding: 60px 24px; text-align: center; color: #fff;">
     <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Ready to Upgrade Your Print Game?</h2>
-    <p style="opacity: 0.9; margin-bottom: 28px; font-size: 1.1rem;">Grab your Snapmaker at the best price &mdash; affiliate link gets you the same deal.</p>
+    <p style="opacity: 0.9; margin-bottom: 28px; font-size: 1.1rem;">Grab your Snapmaker at the best price — affiliate link gets you the same deal.</p>
     <a href="https://snapmaker.sjv.io/KBz5Je" style="display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--snap-blue); padding: 16px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" rel="nofollow noopener" target="_blank">
-        Shop All Snapmaker Printers <span>&rarr;</span>
+        Shop All Snapmaker Printers <span>→</span>
     </a>
 </section>
 
-<!-- DISCLOSURE -->
+<!-- ═══════ DISCLOSURE ═══════ -->
 <div class="section" style="padding-bottom: 0;">
     <div class="disclosure">
-        <strong>Affiliate Disclosure:</strong> This page contains affiliate links to Snapmaker products. If you purchase through these links, I may earn a commission at no additional cost to you. I only recommend products I've personally tested or thoroughly researched. All opinions are my own. Prices and availability are subject to change &mdash; always verify on the Snapmaker website before purchasing.
+        <strong>Affiliate Disclosure:</strong> This page contains affiliate links to Snapmaker products. If you purchase through these links, I may earn a commission at no additional cost to you. I only recommend products I've personally tested or thoroughly researched. All opinions are my own. Prices and availability are subject to change — always verify on the Snapmaker website before purchasing.
     </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══════ FOOTER ═══════ -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="brand">🖨️ 3DPrinterMatt</div>
@@ -524,18 +857,27 @@
             <a href="https://x.com/Mattjgale87" target="_blank" rel="noopener">X/Twitter</a>
             <a href="https://www.instagram.com/3dprintermatt" target="_blank" rel="noopener">Instagram</a>
         </div>
-        <p style="font-size: 0.85rem;">Honest 3D printing reviews &amp; deals for makers who hate wasting money.</p>
+        <p style="font-size: 0.85rem;">Honest 3D printing reviews & deals for makers who hate wasting money.</p>
         <p class="copyright">© 2025 3DPrinterMatt. All rights reserved. Not affiliated with Snapmaker.</p>
     </div>
 </footer>
 
 <script>
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
         const item = q.parentElement;
         const wasOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
         if (!wasOpen) item.classList.add('open');
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
 });
 </script>
